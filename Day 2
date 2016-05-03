@@ -1,0 +1,5 @@
+Today felt much more tricky.  Although I ultimately ended up with a functional finished product by following the space shooter tutorial, the asset package I downloaded contained the scripts required for the project, which felt liek a large part of the project.  It turned out that this package was part of a seperate tutorial for a cloud software called BrainCloud that used the simple space shooter game to show how it could be used to save and merge the statistics at the end of the game, such as the shot accuracy.  
+
+Even with the codes pre-written, this project took up most of the day, and definitely felt more challenging.  I did learn some aspects about how to work with audio in Unity, and also got some more experience with organizing Hierarchy, so the experience was definitely still good.
+
+I would link the game here, but unfortunately, Chrome, my default browser, does not support the Unity player.  It works fine when I target the build for Windows though.  I will probably have to temporarily switch my default browser to Firefox.
