@@ -1,0 +1,5 @@
+As I've decided that practice projects feel llike the way to go, I've spent the day today working on the tanks tutorial.  I am around halfway done if I had to guess, as this project is slightly more complicated, and I found the correct version without ready made scripts this time.
+
+I have a better sense of what I'm going to be doing while creating my own game.  Although the interface of Unity felt like a significant wall for the first two days, I am now feeling very comfortable with it, and I realize now that I will be spending most of my effort scripting, and the rest of it finding assets and making compound colliders if I choose to use them over mesh colliders or working on animations if I work those in, which are three things that are already done for you in the tutorials.  It seems quite likely that I will be looking back at the scripts that the tutorials helped me write fairly often, but I can also tell that I've slowly built an understanding for most of the basics that tend to get reused a lot.
+
+The scripting aspect of the project definitely feels by far the most important, so I may choose to skip the animation tutorials to focus in more on that.
