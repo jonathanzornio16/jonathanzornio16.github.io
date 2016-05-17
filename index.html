@@ -29,6 +29,17 @@
       <section id="main_content" class="inner">
         <h3>
         
+<a id="welcome-to-github-pages-USE-AS-TEMPLATE" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5/17/2016</h3>
+
+<p>  I feel like I got more done today, but still didn't cover as much ground as I'd like.  I got the shooter to work todaay, but a lot of time was spent debugging it.  There was even one point where shooting the weapons would destroy the camera, which I thought was pretty funny.  I fixed that by tagging the children of the plane with "Player", which stopped this issue but then caused the camera to go crazy, because the camera looks for one object tagged with Player to follow in a fixed position.  The result was a view from directly above the plane, and was actually kind of cool.  I'm tempted to use it as a feature, but the view was definitely too hard to fly around with when you can't really see in front of you.  
+
+Those bugs were definitely the highlight of my day.  I solved them by making a new tag called PlayerParts that I tagged the child objects with, and then modified the code accordingly.  I had a few other bugs that I had to deal with, but nothing as memorable. While the weapon now shoots properly, I want the shots to be able to interact with the terrain, which they do not appear to be doing.  I also need to add some things to shoot at, and work some special effects there.  
+
+Other than that, I added a greener grass texture to my terrain and added it to some areas, which definitely helps differentiate the landscapes better.  I also added a collectible object that can boost engine power.  I had some fun messing around with those.  I'm not sure if I want these in fixed positions that make sense for the maps or randomly distributed by code.
+</p>
+
+<h3>
+        
 <a id="welcome-to-github-pages-USE-AS-TEMPLATE" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5/16/2016</h3>
 
 <p>  Today was a rather slow day in terms of progress.  I started out today by moving the control of the enginge brake to the right mouse button, and switching around the controls so that the brakes apply when the button is not held.  The control now has a very nice feel to it in testing.  After that, I discovered how to enlarge my terrain instead dof having to add new ones, adding some elevation to my terrain, as well as figuring out how to make use of opacity to get the different mixes of textures that I wanted for different regions of the map.  I also added boundaries today, as weird things always happen when the plane flies outside of the terrain, and especially underneath it.  
