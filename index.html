@@ -29,6 +29,15 @@
       <section id="main_content" class="inner">
         <h3>
         
+<a id="welcome-to-github-pages-USE-AS-TEMPLATE" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5/18/2016</h3>
+
+<p>  I managed to fix some more issues today.  The main problem I had at the end of yesterday was the the explosion wasn't functioning correctly.  After looking in the unity code directory some more, I discovered that Instantiate uses the origin rather that the transform of the object with the script attached as a default location for spawning objects.  This caused my explosions to always appear off the map, and was not too hard to fix.  Another problem that I had was that the bullets would sometimes fly through the terrain.  There's no real way to stop this other than to slow down the speed a lot, but I did it as much as I could today while still looking good.
+
+  I also looked at the directory a bit more in order to figure out how to make the audio work with 3D sound (which uses distance), but I am still figuring out the correct settings.
+</p>
+
+ <h3>
+        
 <a id="welcome-to-github-pages-USE-AS-TEMPLATE" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5/17/2016</h3>
 
 <p>  I feel like I got more done today, but still didn't cover as much ground as I'd like.  I got the shooter to work todaay, but a lot of time was spent debugging it.  There was even one point where shooting the weapons would destroy the camera, which I thought was pretty funny.  I fixed that by tagging the children of the plane with "Player", which stopped this issue but then caused the camera to go crazy, because the camera looks for one object tagged with Player to follow in a fixed position.  The result was a view from directly above the plane, and was actually kind of cool.  I'm tempted to use it as a feature, but the view was definitely too hard to fly around with when you can't really see in front of you.  
