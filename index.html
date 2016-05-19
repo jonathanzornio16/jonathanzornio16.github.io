@@ -29,6 +29,21 @@
       <section id="main_content" class="inner">
         <h3>
         
+<a id="welcome-to-github-pages-USE-AS-TEMPLATE" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5/19/2016</h3>
+
+<p>  Today was kind of draining.  I made a fair amount of progress, but I had to deal with at least 10 crashes that caused me to have to check for changes that were and were not saved.  All but one or two of them did not cause much progress to be lost at all, but it felt like a lot of my time was spent waiting on the software today, and that's pretty annoying.  While restarting definitely helps, it turns out that a school computer wasn't the intended target for running Unity.
+
+As far as what I got done goes, I started by editing the particle effects and sound for the explosion, which I managed to get right pretty quickly today (though I had to get them right twice thanks to my computer).  I also quickly modified some code to get it so that explosions wouldn't be generated on the boundary or the speed upgrade, as I noticed these occuring while debugging other stuff.  I also made it so that the speed upgrade rotates, and adjusted the collider accordingly.  I did some other small fixes that I probably forgot about as well.
+
+There are two main projects that I started looking into today but didn't complete.  The first one is adding an enemy, which I was honestly hoping to make more headway on.  I'm thinking that these enemies might end up being balloons.  Right now, the game is surprisingly fun to fly around in, and could probably be presented as a senior project, but doesn't have a real purpose to it.  The second thing I tried to work on today was making the bullet speed relative to the plane's speed when firing.  For some reason, this flat out didn't work, and when I told it to print the velocity vector of the plane in the debug log whenever I recieved the zero vector as a result even when the plane moved.  This project as a whole isn't as high a priority, and doing this would even have the downside of making a higher percentage of bullets fly through the terrain instead of colliding with it, which is a glitch that already happens sometimes.
+
+I've noticed a recurring theme that relatively simple tasks can become very drawn out when you get pelted with crashes and bugs to fix.  I expected to have an enemy by now, though that doesn't necessarily mean that I'm behind on the project.  This is further compounded b the fact that I'm still new, and even though I've noticed myself using documentation or looking at tutorial code far less, the inexperience still hurts at times, as there are probably a few holes here and there.
+
+
+</p>
+
+<h3>
+        
 <a id="welcome-to-github-pages-USE-AS-TEMPLATE" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5/18/2016</h3>
 
 <p>  I managed to fix some more issues today.  The main problem I had at the end of yesterday was the the explosion wasn't functioning correctly.  After looking in the unity code directory some more, I discovered that Instantiate uses the origin rather that the transform of the object with the script attached as a default location for spawning objects.  This caused my explosions to always appear off the map, and was not too hard to fix.  Another problem that I had was that the bullets would sometimes fly through the terrain.  There's no real way to stop this other than to slow down the speed a lot, but I did it as much as I could today while still looking good.
