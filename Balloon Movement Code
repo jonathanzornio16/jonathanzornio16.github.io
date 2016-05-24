@@ -1,0 +1,82 @@
+using UnityEngine;
+using System.Collections;
+
+public class MoveTowardsBase : MonoBehaviour {
+	
+	public Transform Balloon;
+	public GameObject Self;
+	public Rigidbody BalloonRB;
+	public Transform Base;
+	public GameObject Explosion;
+	public float Speed;
+	public float Period;
+	public float Amplitude;
+	public float DescendDistance;
+	public float DownRate;
+	public float DescentSpeedModifier;
+
+	private Vector3 BasePos;
+	private Vector3 BalloonPos;
+	private Vector3 ChangeVecNorm;
+	private Vector3 ChangeUnitVecNorm;
+	private Vector3 ChangeVecDesc;
+	private Vector3 ChangeUnitVecDesc;
+	private bool Descending = false;
+	private bool SmoothTrans = false;
+	private float TempY;
+
+
+	void Start () {
+		AssignVectors ();
+	}
+	
+
+	void Update () 
+	{
+		if (!Descending) {
+			BalloonRB.velocity = new Vector3 (ChangeUnitVecNorm.x, Mathf.Sin (Time.time * 2f * Mathf.PI / Period) * Amplitude, ChangeUnitVecNorm.z) * Speed * Time.deltaTime;
+			CheckDescend ();
+		} 
+		else if (SmoothTrans) 
+		{
+			TempY = BalloonRB.velocity.y / Speed;
+			BalloonRB.velocity = new Vector3 (ChangeUnitVecNorm.x, TempY - DownRate * Time.deltaTime, ChangeUnitVecNorm.z) * Speed * Time.deltaTime;
+			if (Mathf.Abs (BalloonRB.velocity.y / BalloonPos.y) >= Mathf.Abs (BalloonRB.velocity.x / (BalloonRB.position.x - BasePos.x))) 
+			
+			{
+				TempY = -1 * Mathf.Abs (Balloon.position.y * BalloonRB.velocity.x / (BalloonRB.position.x - BasePos.x));
+				Debug.Log (Mathf.Abs (BalloonRB.velocity.y / BalloonPos.y)/Mathf.Abs (BalloonRB.velocity.x / (BalloonRB.position.x - BasePos.x)));
+				BalloonRB.velocity = new Vector3 (ChangeUnitVecNorm.x, TempY, ChangeUnitVecNorm.z) * Speed * Time.deltaTime * DescentSpeedModifier;
+				SmoothTrans = false;
+			}
+		}
+	}
+
+	void OnTriggerEnter (Collider other)
+	{
+		Instantiate (Explosion, Balloon.position, Quaternion.identity);
+		Destroy (Self);
+	}
+
+
+	private void AssignVectors ()
+	{
+		BasePos = new Vector3 (Base.position.x, Balloon.position.y, Base.position.z);
+		BalloonPos = new Vector3 (Balloon.position.x, Balloon.position.y, Balloon.position.z);
+		ChangeVecNorm = new Vector3 (BasePos.x-BalloonPos.x, 0f, BasePos.z-BalloonPos.z);
+		ChangeUnitVecNorm = ChangeVecNorm / ChangeVecNorm.magnitude;
+
+	}
+
+	private void CheckDescend ()
+	{
+		AssignVectors ();
+		if (ChangeVecNorm.magnitude < DescendDistance) {
+			Descending = true;
+			SmoothTrans = true;
+			Debug.Log ("Descending.");
+		}
+
+	}
+}
+
